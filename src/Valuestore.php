@@ -342,9 +342,9 @@ class Valuestore implements ArrayAccess, Countable
      */
     protected function setContent(array $values)
     {
-        file_put_contents($this->fileName, json_encode($values));
-
-        if (!count($values)) {
+        if (count($values)) {
+            file_put_contents($this->fileName, json_encode($values));
+        } elseif (file_exists($this->fileName)) {
             unlink($this->fileName);
         }
 
