@@ -33,6 +33,10 @@ class Valuestore implements ArrayAccess, Countable
      */
     protected function setFileName(string $fileName)
     {
+        if (file_exists($fileName) && ! is_writable($fileName)) {
+            throw new \RuntimeException("{$fileName} is not writable");
+        }
+
         $this->fileName = $fileName;
 
         return $this;

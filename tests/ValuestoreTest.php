@@ -3,8 +3,8 @@
 namespace Spatie\Valuestore\Test;
 
 use org\bovigo\vfs\vfsStream;
-use org\bovigo\vfs\vfsStreamDirectory;
 use Spatie\Valuestore\Valuestore;
+use org\bovigo\vfs\vfsStreamDirectory;
 
 class ValuestoreTest extends \PHPUnit_Framework_TestCase
 {
@@ -391,5 +391,17 @@ class ValuestoreTest extends \PHPUnit_Framework_TestCase
         $this->valuestore->flush();
 
         $this->assertFileNotExists($this->storageFile);
+    }
+
+    /** @test */
+    public function it_checks_if_file_is_writable()
+    {
+        $this->expectException(\RuntimeException::class);
+        $this->expectExceptionMessage("{$this->storageFile} is not writable");
+
+        $file = vfsStream::newFile('storage.json', 0444);
+        $this->root->addChild($file);
+
+        Valuestore::make($this->storageFile);
     }
 }
