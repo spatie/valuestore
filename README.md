@@ -230,14 +230,14 @@ public function push(string $name, $pushValue)
 
 ## prepend
 ```php
-**
+/**
 * Prepend a new value in an array.
 *
 * @param string $name
 * @param $prependValue
 *
 * @return $this
-*
+*/
 public function push(string $name, $prependValue)
 ```
 
