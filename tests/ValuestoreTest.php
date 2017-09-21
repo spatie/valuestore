@@ -2,6 +2,8 @@
 
 namespace Spatie\Valuestore\Test;
 
+use org\bovigo\vfs\vfsStream;
+use org\bovigo\vfs\vfsStreamDirectory;
 use Spatie\Valuestore\Valuestore;
 
 class ValuestoreTest extends \PHPUnit_Framework_TestCase
@@ -12,15 +14,15 @@ class ValuestoreTest extends \PHPUnit_Framework_TestCase
     /** @var \Spatie\Valuestore\Valuestore */
     protected $valuestore;
 
+    /** @var vfsStreamDirectory */
+    private $root;
+
     public function setUp()
     {
         parent::setUp();
 
-        $this->storageFile = __DIR__.'/temp/storage.json';
-
-        if (file_exists($this->storageFile)) {
-            unlink($this->storageFile);
-        }
+        $this->root = vfsStream::setup();
+        $this->storageFile = vfsStream::url('root/storage.json');
 
         $this->valuestore = Valuestore::make($this->storageFile);
     }
