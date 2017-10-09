@@ -52,6 +52,17 @@ class ValuestoreTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
+    public function it_can_skip_writing_to_disk_if_putting_empty_array()
+    {
+        $this->valuestore->put('key', 'value');
+        touch($this->storageFile, 101);
+
+        $this->valuestore->put([]);
+
+        $this->assertEquals(filemtime($this->storageFile), 101);
+    }
+
+    /** @test */
     public function it_can_push_a_value_to_a_non_existing_key()
     {
         $this->valuestore->push('key', 'value');
