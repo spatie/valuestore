@@ -55,7 +55,7 @@ class Valuestore implements ArrayAccess, Countable
      */
     public function put($name, $value = null)
     {
-        if ($name = []) {
+        if ($name == []) {
             return $this;
         }
 
