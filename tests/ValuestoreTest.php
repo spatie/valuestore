@@ -2,9 +2,10 @@
 
 namespace Spatie\Valuestore\Test;
 
+use PHPUnit\Framework\TestCase;
 use Spatie\Valuestore\Valuestore;
 
-class ValuestoreTest extends \PHPUnit_Framework_TestCase
+class ValuestoreTest extends TestCase
 {
     /** @var string */
     protected $storageFile;
