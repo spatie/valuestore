@@ -219,6 +219,28 @@ class ValuestoreTest extends TestCase
     }
 
     /** @test */
+    public function it_can_fetch_all_values_starting_with_a_default_value()
+    {
+        $this->valuestore->put([
+            'group1Key1' => 'valueGroup1Key1',
+            'group1Key2' => 'valueGroup1Key2',
+            'testgroup1' => 'valueTestGroup1',
+            'group2Key1' => 'valueGroup2Key1',
+            'group2Key2' => 'valueGroup2Key2',
+        ]);
+
+        $expectedArray = [
+            'group1Key1' => 'valueGroup1Key1',
+            'group1Key2' => 'valueGroup1Key2',
+            'testgroup1' => 'valueTestGroup1',
+            'group2Key1' => 'valueGroup2Key1',
+            'group2Key2' => 'valueGroup2Key2',
+        ];
+
+        $this->assertSame($expectedArray, $this->valuestore->allStartingWith());
+    }
+
+    /** @test */
     public function it_can_forget_a_value()
     {
         $this->valuestore->put('key', 'value');
