@@ -98,9 +98,7 @@ class Valuestore implements ArrayAccess, Countable
             $oldValue = [$oldValue];
         }
 
-        if (is_array($oldValue)) {
-            $newValue = array_merge($oldValue, $pushValue);
-        }
+        $newValue = array_merge($oldValue, $pushValue);
 
         $this->put($name, $newValue);
 
@@ -133,9 +131,7 @@ class Valuestore implements ArrayAccess, Countable
             $oldValue = [$oldValue];
         }
 
-        if (is_array($oldValue)) {
-            $newValue = array_merge($prependValue, $oldValue);
-        }
+        $newValue = array_merge($prependValue, $oldValue);
 
         $this->put($name, $newValue);
 
