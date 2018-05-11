@@ -7,7 +7,7 @@
 [![StyleCI](https://styleci.io/repos/53952776/shield?branch=master)](https://styleci.io/repos/53952776)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/valuestore.svg?style=flat-square)](https://packagist.org/packages/spatie/valuestore)
 
-This package makes it easy to store and retrieve some values. Stores values are saved as a json in a file.
+This package makes it easy to store and retrieve some loose values. Stored values are saved as a json file.
 
 It can be used like this:
 
@@ -34,11 +34,11 @@ $valuestore->forget('key'); // Removes the item
 
 $valuestore->flush(); // Empty the entire valuestore
 
-$valuestore->flushStartingWith('somekey'); // remove all items who's keys start with "somekey"
+$valuestore->flushStartingWith('somekey'); // remove all items whose keys start with "somekey"
 
-$valuestore->increment('number'); // $valuestore->get('key') will return 1 
-$valuestore->increment('number'); // $valuestore->get('key') will return 2
-$valuestore->increment('number', 3); // $valuestore->get('key') will return 5
+$valuestore->increment('number'); // $valuestore->get('number') will return 1 
+$valuestore->increment('number'); // $valuestore->get('number') will return 2
+$valuestore->increment('number', 3); // $valuestore->get('number') will return 5
 
 // Valuestore implements ArrayAccess
 $valuestore['key'] = 'value';
@@ -46,13 +46,13 @@ $valuestore['key']; // Returns 'value'
 isset($valuestore['key']); // Return true
 unset($valuestore['key']); // Equivalent to removing the value
 
-// Valuestore impements Countable
+// Valuestore implements Countable
 count($valuestore); // Returns 0
 $valuestore->put('key', 'value');
 count($valuestore); // Returns 1
 ```
 
-Read the [usage](#usage) section of this readme to learn the other methods.
+Read the [usage](#usage) section of this readme to learn about the other methods.
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
@@ -229,19 +229,19 @@ public function push(string $name, $pushValue)
 ## prepend
 ```php
 /**
- * Prepend a new value in an array.
+ * Prepend a new value into an array.
  *
  * @param string $name
  * @param $prependValue
  *
  * @return $this
  */
-public function push(string $name, $prependValue)
+public function prepend(string $name, $prependValue)
 ```
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information about what has changed recently.
 
 ## Testing
 
