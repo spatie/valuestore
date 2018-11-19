@@ -241,6 +241,16 @@ public function push(string $name, $pushValue)
 public function prepend(string $name, $prependValue)
 ```
 
+## count
+```php
+/**
+ * Count elements.
+ *
+ * @return int
+ */
+public function count()
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information about what has changed recently.
