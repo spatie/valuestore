@@ -38,7 +38,7 @@ $valuestore->flush(); // Empty the entire valuestore
 
 $valuestore->flushStartingWith('somekey'); // remove all items whose keys start with "somekey"
 
-$valuestore->increment('number'); // $valuestore->get('number') will return 1 
+$valuestore->increment('number'); // $valuestore->get('number') will return 1
 $valuestore->increment('number'); // $valuestore->get('number') will return 2
 $valuestore->increment('number', 3); // $valuestore->get('number') will return 5
 
@@ -93,7 +93,7 @@ You can call the following methods on the `Valuestore`
  *
  * @param string|array $name
  * @param string|int|null $value
- * 
+ *
  * @return $this
  */
 public function put($name, $value = null)
@@ -182,7 +182,7 @@ public function forget(string $key)
 /**
  * Get and forget a value from the store.
  *
- * @param string $name 
+ * @param string $name
  *
  * @return null|string
  */
@@ -241,6 +241,22 @@ public function push(string $name, $pushValue)
 public function prepend(string $name, $prependValue)
 ```
 
+### set
+
+This is an alias to [the `put` method](https://github.com/spatie/valuestore#put).
+
+```php
+/**
+ * Set a value in the store.
+ *
+ * @param string|array $name
+ * @param string|int|null $value
+ *
+ * @return $this
+ */
+public function set($name, $value = null)
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information about what has changed recently.
@@ -277,7 +293,7 @@ We publish all received postcards [on our company website](https://spatie.be/en/
 
 Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
 
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie).
 All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License

@@ -73,6 +73,19 @@ class Valuestore implements ArrayAccess, Countable
     }
 
     /**
+     * set a value in the store.
+     *
+     * @param string|array    $name
+     * @param string|int|null $value
+     *
+     * @return $this
+     */
+    public function set($name, $value = null)
+    {
+        return $this->put(...func_get_args());
+    }
+
+    /**
      * Push a new value into an array.
      *
      * @param string $name

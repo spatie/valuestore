@@ -53,6 +53,14 @@ class ValuestoreTest extends TestCase
     }
 
     /** @test */
+    public function it_can_use_set_as_an_alias_to_put()
+    {
+        $this->valuestore->set('key', 'value');
+
+        $this->assertSame('value', $this->valuestore->get('key'));
+    }
+
+    /** @test */
     public function it_can_skip_writing_to_disk_if_putting_empty_array()
     {
         $this->valuestore->put('key', 'value');
