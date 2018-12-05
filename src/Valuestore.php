@@ -41,6 +41,10 @@ class Valuestore implements ArrayAccess, Countable
     protected function setFileName(string $fileName)
     {
         $this->fileName = $fileName;
+        
+        if (! file_exists($fileName)) {
+            touch($fileName);
+        }
 
         return $this;
     }
