@@ -144,7 +144,7 @@ class Valuestore implements ArrayAccess, Countable
      * @param string $name
      * @param $default
      *
-     * @return null|string
+     * @return null|string|array
      */
     public function get(string $name, $default = null)
     {
