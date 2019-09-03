@@ -401,6 +401,12 @@ class ValuestoreTest extends TestCase
         $this->assertEmpty($this->valuestore['key']);
 
         $this->assertNull($this->valuestore['key']);
+
+        $this->assertFalse(isset($this->valuestore['key']));
+
+        $this->valuestore['key'] = 'value';
+
+        $this->assertTrue(isset($this->valuestore['key']));
     }
 
     /** @test */
