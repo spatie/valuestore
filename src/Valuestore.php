@@ -176,7 +176,7 @@ class Valuestore implements ArrayAccess, Countable
             return [];
         }
 
-        return json_decode(file_get_contents($this->fileName), true);
+        return json_decode(file_get_contents($this->fileName), true) ?? [];
     }
 
     /**
