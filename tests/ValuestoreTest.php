@@ -440,7 +440,7 @@ class ValuestoreTest extends TestCase
     }
 
     /** @test */
-    public function it_is_always_array()
+    public function the_all_function_will_always_return_an_array()
     {
         $this->assertFileNotExists($this->storageFile);
 
