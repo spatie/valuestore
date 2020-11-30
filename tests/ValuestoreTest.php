@@ -13,7 +13,7 @@ class ValuestoreTest extends TestCase
     /** @var \Spatie\Valuestore\Valuestore */
     protected $valuestore;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
