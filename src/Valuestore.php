@@ -160,7 +160,7 @@ class Valuestore implements ArrayAccess, Countable
     /*
      * Determine if the store has a value for the given name.
      */
-    public function has(string $name) : bool
+    public function has(string $name): bool
     {
         return array_key_exists($name, $this->all());
     }
@@ -170,7 +170,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return array
      */
-    public function all() : array
+    public function all(): array
     {
         if (! file_exists($this->fileName)) {
             return [];
@@ -186,7 +186,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return array
      */
-    public function allStartingWith(string $startingWith = '') : array
+    public function allStartingWith(string $startingWith = ''): array
     {
         $values = $this->all();
 
@@ -356,21 +356,21 @@ class Valuestore implements ArrayAccess, Countable
         return count($this->all());
     }
 
-    protected function filterKeysStartingWith(array $values, string $startsWith) : array
+    protected function filterKeysStartingWith(array $values, string $startsWith): array
     {
         return array_filter($values, function ($key) use ($startsWith) {
             return $this->startsWith($key, $startsWith);
         }, ARRAY_FILTER_USE_KEY);
     }
 
-    protected function filterKeysNotStartingWith(array $values, string $startsWith) : array
+    protected function filterKeysNotStartingWith(array $values, string $startsWith): array
     {
         return array_filter($values, function ($key) use ($startsWith) {
             return ! $this->startsWith($key, $startsWith);
         }, ARRAY_FILTER_USE_KEY);
     }
 
-    protected function startsWith(string $haystack, string $needle) : bool
+    protected function startsWith(string $haystack, string $needle): bool
     {
         return substr($haystack, 0, strlen($needle)) === $needle;
     }
