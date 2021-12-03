@@ -300,7 +300,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return $this->has($offset);
     }
@@ -314,7 +314,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->get($offset);
     }
@@ -327,7 +327,7 @@ class Valuestore implements ArrayAccess, Countable
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->put($offset, $value);
     }
@@ -339,7 +339,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         $this->forget($offset);
     }
@@ -351,7 +351,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return int
      */
-    public function count()
+    public function count(): int
     {
         return count($this->all());
     }
