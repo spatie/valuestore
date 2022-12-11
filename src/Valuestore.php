@@ -266,7 +266,7 @@ class Valuestore implements ArrayAccess, Countable
      * @param string $name
      * @param int    $by
      *
-     * @return int|null|string
+     * @return string|int|null
      */
     public function increment(string $name, int $by = 1)
     {
@@ -285,7 +285,7 @@ class Valuestore implements ArrayAccess, Countable
      * @param string $name
      * @param int    $by
      *
-     * @return int|null|string
+     * @return string|int|null
      */
     public function decrement(string $name, int $by = 1)
     {
