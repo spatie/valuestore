@@ -124,6 +124,14 @@ class ValuestoreTest extends TestCase
     }
 
     /** @test */
+    public function it_can_store_a_float()
+    {
+        $this->valuestore->put('PI', 3.14159265359);
+
+        $this->assertSame(3.14159265359, $this->valuestore->get('PI'));
+    }
+
+    /** @test */
     public function it_provides_a_chainable_put_method()
     {
         $this->valuestore
