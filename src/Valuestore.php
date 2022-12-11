@@ -360,20 +360,15 @@ class Valuestore implements ArrayAccess, Countable
     protected function filterKeysStartingWith(array $values, string $startsWith): array
     {
         return array_filter($values, function ($key) use ($startsWith) {
-            return $this->startsWith($key, $startsWith);
+            return str_starts_with($key, $startsWith);
         }, ARRAY_FILTER_USE_KEY);
     }
 
     protected function filterKeysNotStartingWith(array $values, string $startsWith): array
     {
         return array_filter($values, function ($key) use ($startsWith) {
-            return ! $this->startsWith($key, $startsWith);
+            return ! str_starts_with($key, $startsWith);
         }, ARRAY_FILTER_USE_KEY);
-    }
-
-    protected function startsWith(string $haystack, string $needle): bool
-    {
-        return substr($haystack, 0, strlen($needle)) === $needle;
     }
 
     protected function setContent(array $values)
