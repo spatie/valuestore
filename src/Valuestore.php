@@ -15,7 +15,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public static function make(string $fileName, array $values = null)
+    public static function make(string $fileName, array $values = null): static
     {
         $valuestore = (new static())->setFileName($fileName);
 
@@ -37,7 +37,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    protected function setFileName(string $fileName)
+    protected function setFileName(string $fileName): static
     {
         $this->fileName = $fileName;
 
@@ -52,7 +52,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function put($name, $value = null)
+    public function put($name, $value = null): static
     {
         if ($name == []) {
             return $this;
@@ -79,7 +79,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function push(string $name, $pushValue)
+    public function push(string $name, $pushValue): static
     {
         if (! is_array($pushValue)) {
             $pushValue = [$pushValue];
@@ -112,7 +112,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function prepend(string $name, $prependValue)
+    public function prepend(string $name, $prependValue): static
     {
         if (! is_array($prependValue)) {
             $prependValue = [$prependValue];
@@ -203,7 +203,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function forget(string $key)
+    public function forget(string $key): static
     {
         $newContent = $this->all();
 
@@ -219,7 +219,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function flush()
+    public function flush(): static
     {
         return $this->setContent([]);
     }
@@ -231,7 +231,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function flushStartingWith(string $startingWith = '')
+    public function flushStartingWith(string $startingWith = ''): static
     {
         $newContent = [];
 
