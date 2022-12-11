@@ -7,8 +7,7 @@ use Countable;
 
 class Valuestore implements ArrayAccess, Countable
 {
-    /** @var string */
-    protected $fileName;
+    protected string $fileName;
 
     /**
      * @param string $fileName
