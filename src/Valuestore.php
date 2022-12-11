@@ -141,9 +141,9 @@ class Valuestore implements ArrayAccess, Countable
      * Get a value from the store.
      *
      * @param string $name
-     * @param $default
+     * @param array|string|float|int|null $default
      *
-     * @return null|string|array
+     * @return array|string|float|int|null
      */
     public function get(string $name, $default = null): array|string|float|int|null
     {
@@ -249,7 +249,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @param string $name
      *
-     * @return null|string
+     * @return array|string|float|int|null
      */
     public function pull(string $name): array|string|float|int|null
     {
