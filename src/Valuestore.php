@@ -145,7 +145,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return null|string|array
      */
-    public function get(string $name, $default = null)
+    public function get(string $name, $default = null): array|string|float|int|null
     {
         $all = $this->all();
 
@@ -251,7 +251,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return null|string
      */
-    public function pull(string $name)
+    public function pull(string $name): array|string|float|int|null
     {
         $value = $this->get($name);
 
