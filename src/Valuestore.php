@@ -158,6 +158,8 @@ class Valuestore implements ArrayAccess, Countable
 
     /*
      * Determine if the store has a value for the given name.
+     *
+     * @return bool
      */
     public function has(string $name): bool
     {
