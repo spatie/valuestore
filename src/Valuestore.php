@@ -47,8 +47,8 @@ class Valuestore implements ArrayAccess, Countable
     /**
      * Put a value in the store.
      *
-     * @param string|array    $name
-     * @param string|int|null $value
+     * @param array|string                $name
+     * @param array|string|float|int|null $value
      *
      * @return $this
      */
@@ -75,7 +75,7 @@ class Valuestore implements ArrayAccess, Countable
      * Push a new value into an array.
      *
      * @param string $name
-     * @param $pushValue
+     * @param array|string|float|int|null $pushValue
      *
      * @return $this
      */
@@ -108,7 +108,7 @@ class Valuestore implements ArrayAccess, Countable
      * Prepend a new value in an array.
      *
      * @param string $name
-     * @param $prependValue
+     * @param array|string|float|int|null $prependValue
      *
      * @return $this
      */
