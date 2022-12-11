@@ -15,7 +15,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public static function make(string $fileName, array $values = null): static
+    public static function make(string $fileName, ?array $values = null): static
     {
         $valuestore = (new static())->setFileName($fileName);
 
