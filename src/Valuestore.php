@@ -375,11 +375,6 @@ class Valuestore implements ArrayAccess, Countable
         return substr($haystack, 0, strlen($needle)) === $needle;
     }
 
-    /**
-     * @param array $values
-     *
-     * @return $this
-     */
     protected function setContent(array $values)
     {
         file_put_contents($this->fileName, json_encode($values));
