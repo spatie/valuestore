@@ -52,7 +52,7 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function put($name, $value = null): static
+    public function put(array|string $name, $value = null): static
     {
         if ($name === []) {
             return $this;
