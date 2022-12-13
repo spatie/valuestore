@@ -2,6 +2,20 @@
 
 All notable changes to `valuestore` will be documented in this file
 
+## 1.3.2 - 2022-12-13
+
+### What's Changed
+
+- Add PHP 8.2 Support by @patinthehat in https://github.com/spatie/valuestore/pull/44
+- Feature/cleanup for 8 by @kudashevs in https://github.com/spatie/valuestore/pull/45
+
+### New Contributors
+
+- @patinthehat made their first contribution in https://github.com/spatie/valuestore/pull/44
+- @kudashevs made their first contribution in https://github.com/spatie/valuestore/pull/45
+
+**Full Changelog**: https://github.com/spatie/valuestore/compare/1.3.1...1.3.2
+
 ## 1.3.1 - 2021-12-03
 
 - improve support for PHP 8.1
