@@ -31,7 +31,9 @@ class Valuestore implements ArrayAccess, Countable
         return $this;
     }
 
-    public function put(array|string $name, mixed $value = null
+    public function put(
+        array|string $name,
+        mixed $value = null
     ): static {
         if ($name === []) {
             return $this;
@@ -50,7 +52,8 @@ class Valuestore implements ArrayAccess, Countable
         return $this;
     }
 
-    public function push(string $name, mixed $pushValue): static {
+    public function push(string $name, mixed $pushValue): static
+    {
         if (! is_array($pushValue)) {
             $pushValue = [$pushValue];
         }
@@ -74,7 +77,8 @@ class Valuestore implements ArrayAccess, Countable
         return $this;
     }
 
-    public function prepend(string $name, mixed $prependValue): static {
+    public function prepend(string $name, mixed $prependValue): static
+    {
         if (! is_array($prependValue)) {
             $prependValue = [$prependValue];
         }
@@ -98,7 +102,8 @@ class Valuestore implements ArrayAccess, Countable
         return $this;
     }
 
-    public function get(string $name, mixed $default = null): mixed {
+    public function get(string $name, mixed $default = null): mixed
+    {
         $all = $this->all();
 
         if (! array_key_exists($name, $all)) {
@@ -107,7 +112,6 @@ class Valuestore implements ArrayAccess, Countable
 
         return $all[$name];
     }
-
 
     public function has(string $name): bool
     {
@@ -133,7 +137,6 @@ class Valuestore implements ArrayAccess, Countable
 
         return $this->filterKeysStartingWith($values, $startingWith);
     }
-
 
     public function forget(string $key): static
     {
@@ -161,7 +164,6 @@ class Valuestore implements ArrayAccess, Countable
 
         return $this->setContent($newContent);
     }
-
 
     public function pull(string $name): mixed
     {
