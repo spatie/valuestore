@@ -118,7 +118,10 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function prepend(string $name, $prependValue): static
+    public function prepend(
+        string $name,
+        array|string|float|int|null $prependValue
+    ): static
     {
         if (! is_array($prependValue)) {
             $prependValue = [$prependValue];
