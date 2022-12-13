@@ -235,15 +235,14 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Increment a value from the store.
-     *
-     * @param string $name
-     * @param int    $by
-     *
-     * @return string|int|null
      */
-    public function increment(string $name, int $by = 1)
+    public function increment(string $name, int $by = 1): array|string|int|float|null
     {
         $currentValue = $this->get($name) ?? 0;
+
+        if (! $this->isNumber($currentValue)) {
+            return $currentValue;
+        }
 
         $newValue = $currentValue + $by;
 
@@ -253,14 +252,17 @@ class Valuestore implements ArrayAccess, Countable
     }
 
     /**
-     * Decrement a value from the store.
-     *
-     * @param string $name
-     * @param int    $by
-     *
-     * @return string|int|null
+     * Determine if the value can be incremented or decremented.
      */
-    public function decrement(string $name, int $by = 1)
+    public function isNumber($value): bool
+    {
+        return is_int($value) || is_float($value);
+    }
+
+    /**
+     * Decrement a value from the store.
+     */
+    public function decrement(string $name, int $by = 1): array|string|int|float|null
     {
         return $this->increment($name, $by * -1);
     }

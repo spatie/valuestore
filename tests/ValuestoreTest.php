@@ -356,6 +356,26 @@ class ValuestoreTest extends TestCase
     }
 
     /** @test */
+    public function it_cannot_increment_a_string_value()
+    {
+        $this->valuestore->put('string', 'test');
+
+        $this->valuestore->increment('string');
+
+        $this->assertSame('test', $this->valuestore->get('string'));
+    }
+
+    /** @test */
+    public function it_cannot_increment_a_null_value()
+    {
+        $this->valuestore->put('null', null);
+
+        $this->valuestore->increment('string');
+
+        $this->assertSame(null, $this->valuestore->get('null'));
+    }
+
+    /** @test */
     public function it_can_decrement_a_new_value()
     {
         $returnValue = $this->valuestore->decrement('number');
@@ -391,6 +411,27 @@ class ValuestoreTest extends TestCase
         $this->assertSame(-4, $returnValue);
 
         $this->assertSame(-4, $this->valuestore->get('number'));
+    }
+
+
+    /** @test */
+    public function it_cannot_decrement_a_string_value()
+    {
+        $this->valuestore->put('string', 'test');
+
+        $this->valuestore->increment('string');
+
+        $this->assertSame('test', $this->valuestore->get('string'));
+    }
+
+    /** @test */
+    public function it_cannot_decrement_a_null_value()
+    {
+        $this->valuestore->put('null', null);
+
+        $this->valuestore->increment('string');
+
+        $this->assertSame(null, $this->valuestore->get('null'));
     }
 
     /** @test */
