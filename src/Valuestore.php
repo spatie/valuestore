@@ -10,9 +10,6 @@ class Valuestore implements ArrayAccess, Countable
     protected string $fileName;
 
     /**
-     * @param string $fileName
-     * @param array|null $values
-     *
      * @return $this
      */
     public static function make(string $fileName, ?array $values = null): static
@@ -33,8 +30,6 @@ class Valuestore implements ArrayAccess, Countable
     /**
      * Set the filename where all values will be stored.
      *
-     * @param string $fileName
-     *
      * @return $this
      */
     protected function setFileName(string $fileName): static
@@ -47,16 +42,12 @@ class Valuestore implements ArrayAccess, Countable
     /**
      * Put a value in the store.
      *
-     * @param array|string                $name
-     * @param array|string|float|int|null $value
-     *
      * @return $this
      */
     public function put(
         array|string $name,
         array|string|float|int|null $value = null
-    ): static
-    {
+    ): static {
         if ($name === []) {
             return $this;
         }
@@ -77,16 +68,12 @@ class Valuestore implements ArrayAccess, Countable
     /**
      * Push a new value into an array.
      *
-     * @param string $name
-     * @param array|string|float|int|null $pushValue
-     *
      * @return $this
      */
     public function push(
         string $name,
         array|string|float|int|null $pushValue
-    ): static
-    {
+    ): static {
         if (! is_array($pushValue)) {
             $pushValue = [$pushValue];
         }
@@ -113,16 +100,12 @@ class Valuestore implements ArrayAccess, Countable
     /**
      * Prepend a new value in an array.
      *
-     * @param string $name
-     * @param array|string|float|int|null $prependValue
-     *
      * @return $this
      */
     public function prepend(
         string $name,
         array|string|float|int|null $prependValue
-    ): static
-    {
+    ): static {
         if (! is_array($prependValue)) {
             $prependValue = [$prependValue];
         }
@@ -148,17 +131,11 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Get a value from the store.
-     *
-     * @param string $name
-     * @param array|string|float|int|null $default
-     *
-     * @return array|string|float|int|null
      */
     public function get(
         string $name,
         array|string|float|int|null $default = null
-    ): array|string|float|int|null
-    {
+    ): array|string|float|int|null {
         $all = $this->all();
 
         if (! array_key_exists($name, $all)) {
@@ -170,8 +147,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /*
      * Determine if the store has a value for the given name.
-     *
-     * @return bool
      */
     public function has(string $name): bool
     {
@@ -180,8 +155,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Get all values from the store.
-     *
-     * @return array
      */
     public function all(): array
     {
@@ -194,10 +167,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Get all keys starting with a given string from the store.
-     *
-     * @param string $startingWith
-     *
-     * @return array
      */
     public function allStartingWith(string $startingWith = ''): array
     {
@@ -212,8 +181,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Forget a value from the store.
-     *
-     * @param string $key
      *
      * @return $this
      */
@@ -241,8 +208,6 @@ class Valuestore implements ArrayAccess, Countable
     /**
      * Flush all values which keys start with a given string.
      *
-     * @param string $startingWith
-     *
      * @return $this
      */
     public function flushStartingWith(string $startingWith = ''): static
@@ -258,10 +223,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Get and forget a value from the store.
-     *
-     * @param string $name
-     *
-     * @return array|string|float|int|null
      */
     public function pull(string $name): array|string|float|int|null
     {
@@ -306,7 +267,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Whether a offset exists.
-     *
      * @link http://php.net/manual/en/arrayaccess.offsetexists.php
      *
      * @param mixed $offset
@@ -320,7 +280,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Offset to retrieve.
-     *
      * @link http://php.net/manual/en/arrayaccess.offsetget.php
      *
      * @param mixed $offset
@@ -334,7 +293,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Offset to set.
-     *
      * @link http://php.net/manual/en/arrayaccess.offsetset.php
      *
      * @param mixed $offset
@@ -347,7 +305,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Offset to unset.
-     *
      * @link http://php.net/manual/en/arrayaccess.offsetunset.php
      *
      * @param mixed $offset
@@ -359,7 +316,6 @@ class Valuestore implements ArrayAccess, Countable
 
     /**
      * Count elements.
-     *
      * @link http://php.net/manual/en/countable.count.php
      *
      * @return int
