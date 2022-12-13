@@ -154,7 +154,10 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return array|string|float|int|null
      */
-    public function get(string $name, $default = null): array|string|float|int|null
+    public function get(
+        string $name,
+        array|string|float|int|null $default = null
+    ): array|string|float|int|null
     {
         $all = $this->all();
 
