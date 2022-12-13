@@ -82,7 +82,10 @@ class Valuestore implements ArrayAccess, Countable
      *
      * @return $this
      */
-    public function push(string $name, $pushValue): static
+    public function push(
+        string $name,
+        array|string|float|int|null $pushValue
+    ): static
     {
         if (! is_array($pushValue)) {
             $pushValue = [$pushValue];
