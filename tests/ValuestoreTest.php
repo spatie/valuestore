@@ -413,7 +413,6 @@ class ValuestoreTest extends TestCase
         $this->assertSame(-4, $this->valuestore->get('number'));
     }
 
-
     /** @test */
     public function it_cannot_decrement_a_string_value()
     {
