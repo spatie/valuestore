@@ -110,7 +110,7 @@ class Valuestore implements ArrayAccess, Countable
             return $default;
         }
 
-        return $all[$name];
+        return $all[$name] ?? $default;
     }
 
     public function has(string $name): bool
