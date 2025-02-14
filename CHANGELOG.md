@@ -2,6 +2,18 @@
 
 All notable changes to `valuestore` will be documented in this file
 
+## 1.3.3 - 2025-02-14
+
+### What's Changed
+
+* Laravel 12.x Compatibility by @laravel-shift in https://github.com/spatie/valuestore/pull/49
+
+### New Contributors
+
+* @laravel-shift made their first contribution in https://github.com/spatie/valuestore/pull/49
+
+**Full Changelog**: https://github.com/spatie/valuestore/compare/1.3.2...1.3.3
+
 ## 1.3.2 - 2022-12-13
 
 ### What's Changed
